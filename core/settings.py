@@ -38,6 +38,7 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "user",
+    "cabinet",
 ]
 
 THIRD_PARTY_APPS = [
