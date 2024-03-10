@@ -1,10 +1,13 @@
 from django.urls import path
+from rest_framework import routers
 
-from cabinet.views import BoxDetailUpdateView, MyBoxesListView
+from cabinet.views import BoxViewSet
+
+router = routers.DefaultRouter()
+router.register("boxes", BoxViewSet)
+
 
 urlpatterns = [
-    path("boxes/<int:pk>/", BoxDetailUpdateView.as_view(), name="boxes-detail"),
-    path("my-boxes/", MyBoxesListView.as_view(), name="my-boxes-list")
-]
+] + router.urls
 
 app_name = "cabinet"
