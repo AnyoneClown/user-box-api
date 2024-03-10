@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from cabinet.models import Box, Notification, UserNotification
+from cabinet.models import Box, Notification, UserNotification, Operation
 
 
 class BoxSerializer(serializers.ModelSerializer):
@@ -29,3 +29,9 @@ class UserNotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserNotification
         fields = ["notification", "date"]
+
+
+class OperationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Operation
+        fields = "__all__"
