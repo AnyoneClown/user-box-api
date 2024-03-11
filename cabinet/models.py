@@ -57,6 +57,9 @@ class Coin(models.Model):
         app_label = "cabinet"
         db_table = "coins"
 
+    def __str__(self) -> str:
+        return f"Coin: {self.name}, rate: {self.rate}, quantity: {self.quantity}"
+
 
 class Notification(models.Model):
     text = models.TextField()
