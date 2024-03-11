@@ -39,9 +39,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "current_amount",
-                    models.DecimalField(
-                        blank=True, decimal_places=2, max_digits=10, null=True
-                    ),
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True),
                 ),
                 ("current_attempts", models.IntegerField(blank=True, null=True)),
                 ("status", models.BooleanField()),

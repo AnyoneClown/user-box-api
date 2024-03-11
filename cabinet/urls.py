@@ -9,7 +9,6 @@ router.register("notifications", NotificationViewSet)
 router.register("operations", OperationViewSet)
 router.register("coins", CoinViewSet)
 
-urlpatterns = [
-] + router.urls
+urlpatterns = [] + router.urls
 
 app_name = "cabinet"

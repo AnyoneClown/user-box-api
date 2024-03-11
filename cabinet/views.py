@@ -3,9 +3,18 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from cabinet.models import Box, UserBox, Notification, UserNotification, Operation, Coin, UserBalance
-from cabinet.serializers import BoxSerializer, UserBoxListSerializer, NotificationSerializer, OperationSerializer, \
-    CoinSerializer, UserBalanceListSerializer, \
-    UserNotificationListSerializer, UserBalanceSerializer, UserBoxSerializer, UserNotificationSerializer
+from cabinet.serializers import (
+    BoxSerializer,
+    UserBoxListSerializer,
+    NotificationSerializer,
+    OperationSerializer,
+    CoinSerializer,
+    UserBalanceListSerializer,
+    UserNotificationListSerializer,
+    UserBalanceSerializer,
+    UserBoxSerializer,
+    UserNotificationSerializer,
+)
 
 
 class BoxViewSet(viewsets.ModelViewSet):
@@ -37,7 +46,9 @@ class NotificationViewSet(viewsets.ModelViewSet):
         permission_classes=[permissions.IsAuthenticated],
     )
     def my_notifications(self, request):
-        user_notifications = UserNotification.objects.filter(user_id=request.user.id).select_related("notification", "user")
+        user_notifications = UserNotification.objects.filter(user_id=request.user.id).select_related(
+            "notification", "user"
+        )
         serializer = UserNotificationListSerializer(user_notifications, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
