@@ -27,8 +27,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+ALLOWED_HOSTS = ["127.0.0.1", "user-box-api.onrender.com"]
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -157,7 +157,6 @@ if DEBUG:
 
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "UserBox Project API",
