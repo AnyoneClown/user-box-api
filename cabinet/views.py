@@ -100,6 +100,6 @@ class UserBoxViewSet(viewsets.ModelViewSet):
 
 
 class UserNotificationViewSet(viewsets.ModelViewSet):
-    queryset = UserBox.objects.select_related("user", "notification")
+    queryset = UserNotification.objects.select_related("user", "notification")
     serializer_class = UserNotificationSerializer
     permission_classes = [permissions.IsAuthenticated]
