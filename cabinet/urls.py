@@ -14,6 +14,6 @@ router.register("user-notifications", UserNotificationViewSet)
 router.register("user-balances", UserBalanceViewSet)
 
 
-urlpatterns = [] + router.urls
+urlpatterns = router.urls
 
 app_name = "cabinet"
