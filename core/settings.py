@@ -44,6 +44,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
+    "drf_spectacular",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
@@ -150,8 +151,8 @@ if DEBUG is True:
 
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Your Project API",
-    "DESCRIPTION": "Your project description",
+    "TITLE": "UserBox Project API",
+    "DESCRIPTION": "API for managing UserBox operations",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
